@@ -1,6 +1,8 @@
+// omports
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// Define the Blog model, which extends the base Model class provided by Sequelize, Initialize the Blog model with column definitions and model options
 class Blog extends Model {}
 
 Blog.init(
@@ -14,8 +16,9 @@ Blog.init(
     title: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: ''
     },
-    user: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',

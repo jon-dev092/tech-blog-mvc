@@ -1,17 +1,17 @@
 [
   {
-    "name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-    "needed_funding": 5000
+    "title": "Fitness Tracker",
+    "user_id": 1,
+    "message": "An app that helps users track their fitness goals and progress."
   },
   {
-    "name": "The Ultimate Tech Quiz",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-    "needed_funding": 10000
+    "title": "Recipe Finder",
+    "user_id": 2,
+    "message": "A website that lets users search for recipes based on ingredients, meal type, and dietary restrictions."
   },
   {
-    "name": "Roll 'Em Up",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-    "needed_funding": 800
+    "title": "Language Learning Game",
+    "user_id": 3,
+    "message": "A game that helps users learn a new language through fun and interactive mini-games."
   }
 ]

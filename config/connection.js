@@ -1,8 +1,11 @@
+// imports
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
 let sequelize;
 
+// Check if the JawsDB URL environment variable exists
+// create a Sequelize connection using the following options
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
@@ -19,3 +22,4 @@ if (process.env.JAWSDB_URL) {
 }
 
 module.exports = sequelize;
+

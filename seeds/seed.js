@@ -13,7 +13,7 @@ const seedDatabase = async () => {
   });
 
   
-  await Blog.BulkCreate(blogData, {
+  await Blog.bulkCreate(blogData, {
     individualHooks: true,
     returning: true,
   });
