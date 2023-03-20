@@ -5,24 +5,25 @@ const newFormHandler = async (event) => {
   const blogTitle = document.querySelector('#project-title').value.trim();
   const blogMessage = document.querySelector('#project-message').value.trim();
 
-
-  try {
-    const response = await fetch(`/api/blogs`, {
-      method: 'POST',
-      body: JSON.stringify({ title: blogTitle, message: blogMessage }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      throw new Error('Failed to create project');
+  if (blogTitle && blogMessage) {
+    try {
+      const response = await fetch(`/api/blogs`, {
+        method: 'POST',
+        body: JSON.stringify({ title: blogTitle, message: blogMessage }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (response.ok) {
+       document.location.replace('/dashboard');
+      } else {
+        throw new Error('Failed to create project');
+      }
+    } catch (err) {
+      alert(err.message);
     }
-  } catch (err) {
-    alert(err.message);
-  }
-};
+  };
+}
 
 
 
