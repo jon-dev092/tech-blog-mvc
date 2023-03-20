@@ -6,16 +6,19 @@ const loginFormHandler = async (event) => {
   const password = document.querySelector('#password-login').value.trim();
 
   if (email && password) {
+
     const response = await fetch('/api/users/login', {
       method: 'POST',
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email: email, password: password }),
       headers: { 'Content-Type': 'application/json' },
     });
-
+    
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/dashboard');
+    } else if (response.status === 401) {
+      alert('Incorrect email or password, please try again');
     } else {
-      alert(response.statusText);
+      alert('Failed to log in');
     }
   }
 };
@@ -31,7 +34,7 @@ const signupFormHandler = async (event) => {
   if (name && email && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ name: name, email: email, password: password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -51,3 +54,21 @@ document
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
+
+
+
+
+
+
+//   const response = await fetch('/api/users/login', {
+  //     method: 'POST',
+  //     body: JSON.stringify({ email, password }),
+  //     headers: { 'Content-Type': 'application/json' },
+  //   });
+
+  //   if (response.ok) {
+  //     document.location.replace('/');
+  //   } else {
+  //     alert(response.statusText);
+  //   }
+  // }

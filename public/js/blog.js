@@ -5,22 +5,43 @@ const newFormHandler = async (event) => {
   const blogTitle = document.querySelector('#project-title').value.trim();
   const blogMessage = document.querySelector('#project-message').value.trim();
 
-  if (blogTitle && blogMessage) {
+
+  try {
     const response = await fetch(`/api/blogs`, {
       method: 'POST',
-      body: JSON.stringify({ blogTitle, blogMessage }),
+      body: JSON.stringify({ title: blogTitle, message: blogMessage }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
-
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
-      alert('Failed to create project');
+      throw new Error('Failed to create project');
     }
+  } catch (err) {
+    alert(err.message);
   }
 };
+
+
+
+//   if (blogTitle && blogMessage) {
+//     const response = await fetch(`/api/blogs`, {
+//       method: 'POST',
+//       body: JSON.stringify({ blogTitle, blogMessage }),
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//     });
+
+//     if (response.ok) {
+//       document.location.replace('/dashboard');
+//     } else {
+//       alert('Failed to create project');
+//     }
+//   }
+// };
 
 // Add the newFormHandler function as an event listener for form submissions on a specific form element
 document
