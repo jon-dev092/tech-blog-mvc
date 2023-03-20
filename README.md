@@ -31,4 +31,4 @@ on the tech world!
 
 ## Links:
 [Github Repo](https://github.com/jon-dev092/tech-blog-mvc)                                                                                                                                                
-[Deployed Page]()
+[Deployed Page](https://git.heroku.com/infinite-hollows-15594.git)
