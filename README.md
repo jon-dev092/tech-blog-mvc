@@ -21,7 +21,7 @@ on the tech world!
  
 
 ## Usage:
-![mvc-techblog]()
+![mvc-techblog](./14-mvc-homework-demo-01.gif)
 
 
 ## License
